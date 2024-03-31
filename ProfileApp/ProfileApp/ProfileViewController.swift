@@ -42,6 +42,10 @@ final class ProfileViewController: UIViewController {
     private lazy var changePasswordLabel: UILabel = {
         createLabel(
             text: "Изменить пароль",
+            font: .systemFont(
+                ofSize: 16,
+                weight: .regular
+            ),
             origin: CGPoint(
                 x: 30,
                 y: descriptionTextView.frame.origin.y + 183
@@ -56,6 +60,10 @@ final class ProfileViewController: UIViewController {
     private lazy var addDescriptionLabel: UILabel = {
         createLabel(
             text: "Добавить описание",
+            font: .systemFont(
+                ofSize: 16,
+                weight: .regular
+            ),
             origin: CGPoint(
                 x: 30,
                 y: profileImageView.frame.origin.y + 152
@@ -70,6 +78,10 @@ final class ProfileViewController: UIViewController {
     private lazy var fullNameLabel: UILabel = {
         createLabel(
             text: "Имя Фамилия",
+            font: .systemFont(
+                ofSize: 16,
+                weight: .semibold
+            ),
             origin: CGPoint(
                 x: profileImageView.frame.origin.x + 116,
                 y: headerImageView.frame.origin.y + 208
@@ -182,7 +194,7 @@ private extension ProfileViewController {
         
         let button = UIButton(type: .system)
         button.frame = CGRect(origin: origin, size: size)
-        button.backgroundColor = .blue
+        button.backgroundColor = .customBlue
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15)
@@ -217,14 +229,14 @@ private extension ProfileViewController {
         return textView
     }
     
-    func createLabel(text: String, origin: CGPoint, size: CGSize) -> UILabel {
+    func createLabel(text: String, font: UIFont, origin: CGPoint, size: CGSize) -> UILabel {
         let origin = origin
         let size = size
         
         let label = UILabel()
         label.frame = CGRect(origin: origin, size: size)
         label.text = text
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.font = font
         
         return label
     }
@@ -236,6 +248,10 @@ private extension ProfileViewController {
         let textField = UITextField()
         textField.backgroundColor = .background
         textField.frame = CGRect(origin: origin, size: size)
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 31, height: textField.frame.height))
+        textField.leftViewMode = .always
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 31, height: textField.frame.height))
+        textField.rightViewMode = .always
         textField.font = .systemFont(ofSize: 16)
         textField.placeholder = placeholder
         textField.layer.cornerRadius = 10
