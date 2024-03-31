@@ -189,8 +189,6 @@ private extension ProfileViewController {
     }
     
     func createButton(title: String, origin: CGPoint, size: CGSize) -> UIButton {
-        let origin = origin
-        let size = size
         
         let button = UIButton(type: .system)
         button.frame = CGRect(origin: origin, size: size)
@@ -204,8 +202,6 @@ private extension ProfileViewController {
     }
     
     func createImageView(image: UIImage, origin: CGPoint, size: CGSize, radius: CGFloat? = nil) -> UIImageView {
-        let origin = origin
-        let size = size
         
         let imageView = UIImageView()
         imageView.frame = CGRect(origin: origin, size: size)
@@ -230,8 +226,6 @@ private extension ProfileViewController {
     }
     
     func createLabel(text: String, font: UIFont, origin: CGPoint, size: CGSize) -> UILabel {
-        let origin = origin
-        let size = size
         
         let label = UILabel()
         label.frame = CGRect(origin: origin, size: size)
@@ -242,8 +236,6 @@ private extension ProfileViewController {
     }
     
     func createTextField(placeholder: String, origin: CGPoint, size: CGSize) -> UITextField {
-        let origin = origin
-        let size = size
         
         let textField = UITextField()
         textField.backgroundColor = .background
