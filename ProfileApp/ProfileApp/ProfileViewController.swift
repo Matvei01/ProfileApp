@@ -218,6 +218,8 @@ private extension ProfileViewController {
         let size = CGSize(width: view.frame.width - 60, height: 150)
         
         let textView = UITextView()
+        textView.font = .systemFont(ofSize: 16)
+        textView.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         textView.backgroundColor = .background
         textView.frame = CGRect(origin: origin, size: size)
         textView.layer.cornerRadius = 20
@@ -240,6 +242,7 @@ private extension ProfileViewController {
         let textField = UITextField()
         textField.backgroundColor = .background
         textField.frame = CGRect(origin: origin, size: size)
+        textField.isSecureTextEntry = true
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 31, height: textField.frame.height))
         textField.leftViewMode = .always
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 31, height: textField.frame.height))
